@@ -7,15 +7,7 @@ const cors = require(`cors`);
 let cadastros = [];
 let proximoId = 1;
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://medicos-dentistas-voluntarios-u37e.vercel.app",
-      "https://medicos-dentistas-voluntarios-u37e-fcv2ndw9z.vercel.app",
-    ],
-  }),
-);
+app.use(cors());
 
 app.use(express.json());
 
