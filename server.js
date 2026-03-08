@@ -12,6 +12,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://medicos-dentistas-voluntarios-u37e.vercel.app",
+      "https://medicos-dentistas-voluntarios-u37e-fcv2ndw9z.vercel.app",
     ],
   }),
 );
@@ -80,7 +81,5 @@ app.post("/cadastros", validarCadastro, (req, res) => {
     cadastro: novoCadastro,
   });
 });
-
-
 
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
