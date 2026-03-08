@@ -11,7 +11,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://medicos-dentistas-voluntarios-u37e.vercel.app/voluntario",
+      "https://medicos-dentistas-voluntarios-u37e.vercel.app",
     ],
   }),
 );
@@ -81,6 +81,6 @@ app.post("/cadastros", validarCadastro, (req, res) => {
   });
 });
 
-app.use(cors());
+
 
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
