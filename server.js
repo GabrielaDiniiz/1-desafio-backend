@@ -2,9 +2,19 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
+const cors = require(`cors`);
 
 let cadastros = [];
 let proximoId = 1;
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://medicos-dentistas-voluntarios-u37e.vercel.app/voluntario",
+    ],
+  }),
+);
 
 app.use(express.json());
 
@@ -71,6 +81,6 @@ app.post("/cadastros", validarCadastro, (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+app.use(cors());
+
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
